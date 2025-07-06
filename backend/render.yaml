@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: backend
+    name: tyis-workshop
     env: node
     buildCommand: npm install
     startCommand: node server.js
