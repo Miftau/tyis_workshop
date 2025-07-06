@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: backend
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: SMTP_HOST
+        fromDatabase: false
+      - key: SMTP_PORT
+        fromDatabase: false
+      - key: SMTP_USER
+        fromDatabase: false
+      - key: SMTP_PASS
+        fromDatabase: false
+      - key: ADMIN_EMAIL
+        fromDatabase: false
