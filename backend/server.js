@@ -1,11 +1,20 @@
 const express = require('express');
+const cors = require('cors');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
+
 const app = express();
+app.use(cors({
+  origin: 'https://tyis-workshop.vercel.app',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
+}));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 
 // Email sending function
 async function sendEmail(formData) {
